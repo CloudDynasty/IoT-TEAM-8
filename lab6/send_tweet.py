@@ -84,7 +84,10 @@ while True:
         # TODO: modify to your own api key
         response = urequests.get('https://api.thingspeak.com/apps/thingtweet/1/statuses/update?api_key=PNTXNFS5UPA5EHYG&status=' + cleared)
         display_cmd(cleared)
-        print(cleared)
+        print('recovered command is: ' + cleared)
+        # extract the tweet body
+        tweetBody = cleared.split('SEND TWEET ')[1]
+        print('tweet body is: ' + tweetBody)
         # compose and send android response
         response_Android = text + cleared
         conn.send(response)
