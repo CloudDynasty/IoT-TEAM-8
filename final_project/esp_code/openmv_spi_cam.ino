@@ -201,8 +201,7 @@ void connectWifi()
 {
   WiFi.mode(WIFI_STA);
 
-  WiFiMulti.addAP("room", "37288371");
-  //WiFi.begin("room", "37288371");
+  WiFiMulti.addAP("SSID", "PASSCODE");
   while ((!(WiFiMulti.run() == WL_CONNECTED))) {
     delay(500);
     Serial.print("..");
